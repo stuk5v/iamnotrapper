@@ -1,0 +1,32 @@
+//Python Code Test
+
+def getInfo():
+    user_name = input("Please enter your ID: ")
+    password = input("Please enter your Password: ")
+    return user_name, password
+  
+
+def user(user_name, password):
+    if user_name == "stuk5v" and password == "1111":
+        return True
+    elif user_name == "beumi" and password == "2222":
+        return True
+    elif user_name == "smith" and password == "0000":
+        return True
+    else:
+        return False
+
+def login(user_name, password):
+    if user_name == "stuk5v" and password == "1111":
+        print("Hello stuk5v, Good To See You!")
+    elif user_name == "beumi" and password == "2222":
+        print("Hello beumi, Good To See You!")
+    elif user_name == "smith" and password == "0000":
+        print("Hello smith, Good To See You!")
+    
+    
+user_name, password = getInfo()
+if user(user_name, password):
+    login(user_name, password)
+else:
+    print("User Not Found, Please Try Again.")
