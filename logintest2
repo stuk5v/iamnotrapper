@@ -1,0 +1,46 @@
+import getpass
+
+users = {
+    "stuk5v": "1111",
+    "beumi": "2222",
+    "smith": "0000"
+}
+
+new_user = "hueng"
+new_pass = "3333"
+
+users[new_user] = new_pass
+
+data = {
+    "stuk5v": "stuk5v's DATA",
+    "beumi": "beumi's DATA"
+}
+
+new_data = "Hueng's data"
+
+data[new_user] = new_data
+
+
+def login():
+    user_name = input("Please enter your ID: ")
+    password = getpass.getpass("Please enter your Password: ")
+
+    if user_name in users and users[user_name] == password:
+        print(f"Hello {user_name}, Good To See You!")
+        return user_name
+    else:
+        print("User Not Found or Incorrect Password, Please Try Again.")
+        return None
+
+def access_data(user_name):
+    if user_name in data:
+        print(f"Access {data[user_name]}")
+    else:
+        print("You don't have permission to access data.")
+
+if __name__ == "__main__":
+    login_user = login()
+    if login_user:
+        access_data(login_user)
+    else:
+        print("You don't have permission")
